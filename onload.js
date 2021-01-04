@@ -13,18 +13,12 @@ const Sleep = (ms) => {
 
 const Execute = async(text, type) => {
 	let last_char;
+	const spec_chars = ['.', ',', '-', '+', '=', ' '];
 	for(const ch of text) {
 		document.getElementById("console").innerHTML += ch;
 		if(ch === last_char){
 			await Sleep(Random(25, 100));
-		}else if(
-			ch === '.' ||
-			ch === ',' ||
-			ch === '-' ||
-			ch === '+' ||
-			ch === '=' ||
-			ch === ' '
-		){
+		}else if (spec_chars.includes(ch)) {
 			await Sleep(Random(140, 250));
 		}else{
 			await Sleep(Random(50, 250));
