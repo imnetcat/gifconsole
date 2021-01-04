@@ -31,6 +31,12 @@ const Execute = async(text, type) => {
 		}
 		last_char = ch;
 	}
+	await Sleep(3000);
+	
+	while(document.getElementById("console").innerHTML.length > 0){
+		document.getElementById("console").innerHTML = document.getElementById("console").innerHTML.substring(0, document.getElementById("console").innerHTML.length - 1);
+		await Sleep(Random(15, 60));
+	}
 }
 
 const Colors = {
