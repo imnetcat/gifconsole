@@ -1,0 +1,35 @@
+body {
+	margin:0;
+	font-family:open sans,sans-serif;
+	font-size:14px;
+    background: #000;
+}
+
+#console {
+    width: calc(100vw - 132px);
+    height: calc(100vh - 182px);
+    margin: 50px;
+    font-size: 25px;
+    border: 1px solid #FF5722;
+    padding: 15px;
+    white-space: pre-wrap;
+    color: var(--color);
+}
+div#console::after {
+    content: '';
+    width: 16px;
+    height: 30px;
+    background: var(--color);
+    position: absolute;
+	animation: blinker 1s linear infinite;
+}
+header {
+	height: 50px;
+    display: flex;
+    justify-content: center;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
