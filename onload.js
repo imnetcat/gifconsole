@@ -9,6 +9,15 @@ const Sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const OnCursore = () => {
+	//document.getElementById("console").style.setProperty('--cursore', "'█'");
+	document.getElementById("console").style.setProperty('--animation', '1s blink step-end infinite');
+}
+
+const OffCursore = () => {
+	//document.getElementById("console").style.setProperty('--cursore', "''");
+	document.getElementById("console").style.setProperty('--animation', 'none');
+}
 
 
 const Execute = async(text, type) => {
@@ -25,12 +34,19 @@ const Execute = async(text, type) => {
 		}
 		last_char = ch;
 	}
+	
+	OnCursore();
 	await Sleep(3000);
+	OffCursore();
 	
 	while(document.getElementById("console").innerHTML.length > 0){
 		document.getElementById("console").innerHTML = document.getElementById("console").innerHTML.substring(0, document.getElementById("console").innerHTML.length - 1);
-		await Sleep(Random(15, 60));
+
+		await Sleep(Random(60, 80));
+
 	}
+	
+	OnCursore();
 }
 
 const Colors = {
@@ -43,7 +59,8 @@ const Colors = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("console").innerHTML = " ";
+	document.getElementById("console").innerHTML = "";
+	OnCursore();
 	document.getElementById("console").style.setProperty('--color', "#fff");
 	document.getElementById("launch").addEventListener("click", async () => {
 		const text = document.getElementById("data").value;
@@ -52,9 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		
 		Colors[color_type]();
 		
-		document.getElementById("console").innerHTML = " ";
+		document.getElementById("console").innerHTML = "";
 		
 		await Sleep(3000);
+		
+		OffCursore();
 		
 		Execute(text, type);
 	});

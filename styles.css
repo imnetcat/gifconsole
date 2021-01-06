@@ -7,29 +7,71 @@ body {
 
 #console {
     width: calc(100vw - 132px);
-    height: calc(100vh - 182px);
+    height: calc(100vh - 487px);
     margin: 50px;
-    font-size: 25px;
+    font-size: 45px;
     border: 1px solid #FF5722;
     padding: 15px;
+    padding-top: 320px;
+    overflow-y: scroll;
     white-space: pre-wrap;
     color: var(--color);
 }
 div#console::after {
-    content: '';
-    width: 16px;
-    height: 30px;
-    background: var(--color);
+    content: '█';
+    width: 22px;
+    height: 51px;
     position: absolute;
-	animation: blinker 1s linear infinite;
+    color: white;
+	animation: var(--animation);
 }
 header {
 	height: 50px;
     display: flex;
     justify-content: center;
 }
-@keyframes blinker {
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
   50% {
-    opacity: 0;
+    color: white;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
   }
 }
