@@ -10,26 +10,32 @@ const Sleep = (ms) => {
 }
 
 const OnCursore = () => {
-	//document.getElementById("console").style.setProperty('--cursore', "'█'");
 	document.getElementById("console").style.setProperty('--animation', '1s blink step-end infinite');
 }
 
 const OffCursore = () => {
-	//document.getElementById("console").style.setProperty('--cursore', "''");
 	document.getElementById("console").style.setProperty('--animation', 'none');
 }
 
 
 const Execute = async(text, type) => {
 	let last_char;
-	const spec_chars = ['.', ',', '-', '+', '=', ' '];
+	const spec_chars = ['.', ',', '-', '+', '=', ')', '(', '?', '%', '^', '*', '<', '>'];
+	const big_chars =  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D',
+						'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
 	for(const ch of text) {
 		document.getElementById("console").innerHTML += ch;
 		if(ch === last_char){
 			await Sleep(Random(25, 100));
-		}else if (spec_chars.includes(ch)) {
-			await Sleep(Random(140, 250));
-		}else{
+		}else if (spec_chars.includes(ch)) { // Spec symbols need to press shift
+			await Sleep(Random(300, 350));
+		}else if (big_chars.includes(ch)) { // Big chars need to press shift
+			await Sleep(Random(300, 350));
+		}else if(ch.charCodeAt(0) === 10) { // New line have ascii code 10
+			const r = Random(700, 800);
+			console.log(r);
+			await Sleep(r);
+		} else {
 			await Sleep(Random(50, 250));
 		}
 		last_char = ch;
