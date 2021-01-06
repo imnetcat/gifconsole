@@ -5,9 +5,19 @@
   <title>Console for GIF</title>
   <link rel="stylesheet" href="styles.css">
   <script src="onload.js"></script>
-  <body>
-    
-    <noscript>
+  <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		setTimeout(() => {
+			document.getElementById('scrolling').scrollTo({
+				top:document.getElementById('scrolling').offsetHeight,
+				behavior: "smooth"
+			});
+		}, 5000);
+	});
+  </script>
+</head>
+<body class="flex-box">
+<noscript>
       <div class="pop-message">Внимание! В вашем браузере отключен JavaScript! Без него сайт
         работать не будет или будет работать некорректно!
       </div>
@@ -26,7 +36,14 @@ Fusce malesuada purus ornare nisi posuere sollicitudin sit
 			<option value="2">White</option>
 		</select>
 	</header>
-	<div id="console">
-	</div>
-	</body>
-</head>
+<div class="flex-box" id="page">
+	<div class="flex-container" id="frame"></div>
+  <div class="scrolling content" id="console">
+<!--
+  <div id="black_terminal">
+    <span alt="John Nunemaker">but we are hackers and hackers have black terminals with green font colors!</span>
+  </div>
+-->
+</div>
+</body>
+</html>
