@@ -99,6 +99,7 @@ a {
 }
 
 #console {
+    font-weight: bold;
     font-size: 20px;
     overflow-y: scroll;
     white-space: pre-wrap;
