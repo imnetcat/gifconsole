@@ -33,7 +33,6 @@ const Execute = async(text, type) => {
 			await Sleep(Random(300, 350));
 		}else if(ch.charCodeAt(0) === 10) { // New line have ascii code 10
 			const r = Random(700, 800);
-			console.log(r);
 			await Sleep(r);
 		} else {
 			await Sleep(Random(50, 250));

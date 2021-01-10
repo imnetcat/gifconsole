@@ -6,7 +6,6 @@ body {
   background: #000;
   box-shadow: inset 0 0 18rem #000, inset 0 0 3rem #000, 0 0 10rem #000;
 
-  font-family: 'Source Code Font';
   font-weight: normal;
   font-stretch: normal;
 }
@@ -46,7 +45,7 @@ body {
     overflow: hidden;
     width: calc(100% - 380px);
     height: calc(100% - 50px);
-    background: #003500;
+    background: #164016;
     border-radius: 6rem;
     border: 10px solid #252525;
     position: absolute;
