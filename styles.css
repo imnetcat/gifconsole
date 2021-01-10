@@ -38,14 +38,14 @@ body {
     width: 100%;
     height: 100%;
   background: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,0) 50%,rgb(0 0 0 / 44%) 70%,rgb(0 0 0 / 76%));
-  background-size: 100% 0.2rem;
+  background-size: 100% 0.3rem;
   box-shadow: inset 0 0 18rem #000, inset 0 0 3rem #000, 0 0 10rem #000;
 }
 #page {
     overflow: hidden;
     width: calc(100% - 380px);
     height: calc(100% - 50px);
-    background: #164016;
+    background: #003500;
     border-radius: 6rem;
     border: 10px solid #252525;
     position: absolute;
