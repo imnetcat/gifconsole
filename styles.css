@@ -91,16 +91,13 @@ a {
   margin-top: 1%;
 }
 .content {
-    display: block;
-    width: 90%;
-    margin-left: 10%;
-    padding-right: 10%;
-    padding-top: 10%;
+    height: 80%;
+    padding: 10%;
 }
 
 #console {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 10px;
     overflow-y: scroll;
     white-space: pre-wrap;
     color: var(--color);
