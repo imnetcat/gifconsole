@@ -104,9 +104,6 @@ a {
 }
 div#console::after {
     content: '█';
-    width: 22px;
-    height: 51px;
-    position: absolute;
     color: white;
 	animation: var(--animation);
 }

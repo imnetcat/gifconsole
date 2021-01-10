@@ -18,7 +18,7 @@ const OffCursore = () => {
 }
 
 const OnAutoscroll = () => {
-	document.getElementById('console').addEventListener("DOMNodeInserted", () => {
+	document.getElementById('console').addEventListener("DOMSubtreeModified", () => {
 		document.getElementById('console').scrollTo({
 			top: document.getElementById('console').children.length * 40
 		});
@@ -69,7 +69,7 @@ const PrintEraseByLineFromStart = async(text) => {
 		if(ch.charCodeAt(0) === 10) { // New line have ascii code 10
 			await Sleep(Random(0, 100));
 			if(Random(0, 100) > 95){
-				await Sleep(Random(100, 8000));
+				await Sleep(Random(Random(0, 500), Random(2000, 8000)));
 			}
 			document.getElementById("console").appendChild(span);
 			span = document.createElement("span");
@@ -83,12 +83,22 @@ const PrintEraseByLineFromStart = async(text) => {
 	await Sleep(3000);
 	
     const lines = document.getElementById("console").children;
-    for (let i = 0, child; child = lines[i];) {
+	for (let i = lines.length, child; child = lines[i]; i--) {
+		if(i > 65){
+			child.remove();
+			i--;
+		}
+	}
+	
+    for (const child of lines) {
+		child.innerHTML = "<br>";
+		await Sleep(50);
+	}
+	
+	for (let i = 0, child; child = lines[i];) {
 		child.remove();
-		await Sleep(100);
 	}
 }
-
 
 const Colors = {
 	"1": () => {
