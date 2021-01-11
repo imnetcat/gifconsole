@@ -80,7 +80,7 @@ const PrintEraseByLineFromStart = async(text) => {
 		document.getElementById("console").appendChild(span);
 	}
 	
-	await Sleep(3000);
+	await Sleep(1500);
 	
     const lines = document.getElementById("console").children;
 	for (let i = lines.length, child; child = lines[i]; i--) {
@@ -110,7 +110,6 @@ const Colors = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("console").innerHTML = "";
 	OnCursore();
 	OnAutoscroll();
 	document.getElementById("console").style.setProperty('--color', "#fff");
@@ -120,9 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const color_type = document.getElementById("color_type").value;
 		
 		Colors[color_type]();
-		
-		document.getElementById("console").innerHTML = "";
-		
+				
 		await Sleep(3000);
 		
 		OffCursore();

@@ -102,6 +102,11 @@ a {
     white-space: pre-wrap;
     color: var(--color);
 }
+
+#console pre {	
+    text-align: center;
+}
+
 div#console::after {
     content: '█';
     color: white;
