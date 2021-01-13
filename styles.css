@@ -104,7 +104,8 @@ a {
 }
 
 #console pre {	
-    text-align: center;
+    margin: auto;
+    width: max-content;
 }
 
 div#console::after {
